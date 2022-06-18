@@ -13,6 +13,7 @@
 
 
   <div class="feature__tabs">
+    <div class="feature__line"></div>
     <button class="feature__btn" [ngClass]="{'active': openedTab === i}" (click)="openTab(i)"
       *ngFor="let option of tabs; let i = index">
       {{option}}

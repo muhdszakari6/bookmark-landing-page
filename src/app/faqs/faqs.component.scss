@@ -115,12 +115,14 @@
       margin-bottom: 3rem;
       line-height: 1.5;
       max-width: 50rem;
+
       @include respond(tab-land){
       font-size: 1.1rem;
       line-height: 1.2
     }
     @include respond(phone){
-      text-align: center;
+      text-align: start;
+      margin-right: 3rem;
     }
   }
 }

@@ -13,6 +13,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0rem 5rem;
   }
 
 
@@ -98,9 +99,13 @@
       flex-direction: column;
       text-align: center;
       padding: 0 5rem;
-    border-top: 1px solid #EEE;
 
     }
+  }
+
+  &__line{
+    border-top: 1px solid #EEE;
+
   }
   &__btn{
     position: relative;
