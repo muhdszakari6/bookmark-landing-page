@@ -1,0 +1,132 @@
+@import "../../scss/variables.scss";
+@import "../../scss/mixin.scss";
+
+.hero{
+  padding: 3rem $px-desktop;
+  padding-top: 5rem;
+  display: flex;
+  align-items: center;
+
+  @include respond(tab-land){
+    padding: 2rem $px-tab;
+  padding-top: 5rem;
+
+  }
+
+  @include respond(phone){
+    flex-direction: column;
+    padding: 2rem $px-phone;
+    align-items: flex-start;
+  padding-top: 5rem;
+
+  }
+
+  &__x{
+    margin-right: 4rem;
+      @include respond(phone){
+        order: 2;
+        margin-top: 10rem;
+        text-align: center;
+        margin-right: 0;
+      }
+
+  }
+
+  &__title{
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin-bottom: 3rem;
+    color: $very-dark-blue;
+    font-weight: 500;
+    text-transform: capitalize;
+      &-mobile{
+      display: none;
+      @include respond(phone){
+        display: block;
+      }
+    }
+
+    &-desktop{
+      display: block;
+      @include respond(phone){
+        display: none;
+      }
+    }
+
+    @include respond(tab-land){
+      font-size: 3.5rem;
+    }
+    @include respond(tab-port){
+      font-size: 2.5rem;
+    }
+  }
+
+  &__desc{
+    font-size: 1.8rem;
+    color: $greyish-blue;
+    margin-bottom: 3rem;
+    line-height: 1.5;
+    @include respond(tab-land){
+      font-size: 1.6rem;
+      line-height: 1.2
+    }
+
+    &-mobile{
+      display: none;
+      @include respond(phone){
+        display: block;
+      }
+    }
+
+    &-desktop{
+      display: block;
+      @include respond(phone){
+        display: none;
+      }
+    }
+  }
+
+  &__cta{
+    display: flex;
+    align-items: center;
+    @include respond(phone){
+      justify-content: center;
+    }
+  }
+
+
+  &__y {
+       position: relative;
+       margin-right: -$px-desktop;
+       margin-left: auto;
+        @include respond(tab-land){
+          margin-right:  -$px-tab;
+        }
+        @include respond(phone){
+          order: 1;
+          margin-right: -$px-phone;
+        }
+
+       &::after {
+          right: 0rem;
+          content: "";
+          height: 76%;
+          width: 85%;
+          position: absolute;
+          background-color: hsl(231deg, 69%, 60%);
+          top: 30%;
+          border-radius: 0rem 0 0 18rem;
+          z-index: -1;
+
+       }
+  }
+
+  &__illustrations{
+    width: 100%;
+    margin-left: -3rem;
+  }
+
+}
+     .me-2{
+       margin-right: 2rem;
+      }

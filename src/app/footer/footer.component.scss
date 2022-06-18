@@ -1,0 +1,139 @@
+@import "../../scss/variables.scss";
+@import "../../scss/mixin.scss";
+
+.footer{
+  position: sticky;
+  top: 0;
+  background: $very-dark-blue;
+  padding: 3rem 15rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 99;
+  color: $white;
+  @include respond(tab-land){
+    padding: 3rem 10rem;
+  }
+  @include respond(phone){
+    padding: 3rem 5rem;
+    flex-direction: column;
+
+  }
+
+  &__nav{
+    display: flex;
+    align-items: center;
+    margin-left: 5rem;
+     @include respond(phone){
+       margin-left: 0;
+      }
+
+  }
+
+  &__logo{
+    &-img{
+      height: 3rem ;
+    }
+     @include respond(phone){
+       margin-bottom: 3rem;
+      }
+  }
+  &__list{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    @include respond(phone){
+       flex-direction: column;
+
+    }
+  }
+  &__list-item{
+    margin-right: 1.5rem;
+    @include respond(phone){
+      margin-right: 0;
+    }
+  }
+  &__list-link{
+    &:link, &:visited{
+      display: block;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: inherit;
+      padding: 1rem 1.5rem;
+      font-size: 1.2rem;
+      background-image: linear-gradient(to right, $soft-red, $soft-red);
+      background-size: 0% 2px;
+      background-position: 100% 100%;
+      background-repeat: no-repeat;
+      transition: background-size .5s;
+      -webkit-transition: background-size .5s;
+      -moz-transition: background-size .5s;
+      -ms-transition: background-size .5s;
+      &:hover{
+        background-position: 0 100%;
+        background-size: 100% 2px;
+
+      }
+    }
+  }
+
+  &__btn{
+    padding: 1rem 3.5rem;
+    margin-left: 1rem;
+    color: $white;
+    background-color: $soft-red;
+    border: 0;
+    border-radius: .4rem;
+    -webkit-border-radius: .4rem;
+    -moz-border-radius: .4rem;
+    -ms-border-radius: .4rem;
+    -o-border-radius: .4rem;
+    box-shadow: 0 0 8px #0000001a;
+    cursor: pointer;
+    transition:all .3s;
+
+    &:hover{
+     transform: scale(1.03) translateY(-.2rem);
+     -webkit-transform: scale(1.03) translateY(-.2rem);
+     -moz-transform: scale(1.03) translateY(-.2rem);
+     -ms-transform: scale(1.03) translateY(-.2rem);
+     -o-transform: scale(1.03) translateY(-.2rem);
+}
+}
+}
+
+.nav-btn{
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  @include respond(phone){
+    display: block;
+  }
+}
+
+.nav-icon{
+  font-size:1.8rem;
+}
+
+.shadow{
+    box-shadow: 0 0 8px #0000001a;
+
+}
+
+.icon-wrapper{
+    font-size: 2.5rem;
+    color: white;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    @include respond(phone){
+      margin-right: auto;
+      margin-top: 3rem;
+  }
+}
+.me-3{
+  margin-right: 3rem;
+}

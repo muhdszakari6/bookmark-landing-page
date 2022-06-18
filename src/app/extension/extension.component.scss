@@ -1,0 +1,149 @@
+
+@import "../../scss/variables.scss";
+@import "../../scss/mixin.scss";
+.extension{
+  padding: 3rem $px-desktop;
+  padding-top: 7rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @include respond(tab-land){
+    padding: 2rem $px-tab;
+  padding-top: 7rem;
+
+  }
+
+  @include respond(phone){
+    flex-direction: column;
+    padding: 2rem $px-phone;
+    align-items: center;
+  padding-top: 7rem;
+
+  }
+
+  &__heading{
+  text-align: center;
+  }
+
+    &__title{
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 2.5rem;
+    color: $very-dark-blue;
+    font-weight: 500;
+    text-transform: capitalize;
+
+
+    @include respond(tab-land){
+      font-size: 3.5rem;
+    }
+    @include respond(tab-port){
+      font-size: 2.5rem;
+    }
+    @include respond(phone){
+      text-align: center;
+    }
+  }
+
+  &__desc{
+    font-size: 1.8rem;
+    color: $greyish-blue;
+    margin-bottom: 3rem;
+    line-height: 1.5;
+    max-width: 50rem;
+    @include respond(tab-land){
+      font-size: 1.6rem;
+      line-height: 1.2
+    }
+    @include respond(phone){
+      text-align: center;
+    }
+
+  }
+
+  &__content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(25rem,25rem));
+    grid-template-rows: auto;
+    gap: 3.5rem;
+    margin-top: 3rem;
+    justify-content: center;
+    width: 100%;
+
+  }
+
+  &__card-wrapper{
+   &:nth-child(2){
+      margin-top: 2.5rem;
+      @include respond(tab-port){
+      margin-top: 0rem;
+    }
+      @include respond(phone){
+      margin-top: 3rem;
+    }
+
+    }
+    &:nth-child(3){
+      margin-top: 5rem;
+    @include respond(tab-port){
+      margin-top: 0rem;
+    }
+    @include respond(phone){
+      margin-top: 3rem;
+    }
+
+    }
+  }
+
+  &__card{
+    background: #fff;
+    box-shadow: 0 0 8px #0000001a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1.5rem;
+    -webkit-border-radius: 1.5rem;
+    -moz-border-radius: 1.5rem;
+    -ms-border-radius: 1.5rem;
+    -o-border-radius: 1.5rem;
+    padding-top: 4.5rem;
+    padding-bottom: 2.5rem;
+    // max-height: 30rem;
+
+  }
+  &__browser{
+    width: 9rem;
+  }
+
+  &__browser-title{
+    font-size: 1.9rem;
+    line-height: 1.1;
+    margin-bottom: .5rem;
+    margin-top: 2.5rem;
+    color: $very-dark-blue;
+    font-weight: 500;
+  }
+
+  &__browser-desc{
+    font-size: 1.4rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+
+}
+
+.w-85{
+  width: 85%;
+}
+
+.dotted-line{
+    margin-bottom: 2.5rem;
+    width: 100%;
+    background-image: linear-gradient(to right, #ccc 20%, rgba(255, 255, 255, 0) 0%);
+    background-position: bottom;
+    background-size: 20px 1px;
+    background-repeat: repeat-x;
+    height: 4px;
+}

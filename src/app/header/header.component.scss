@@ -1,0 +1,108 @@
+@import "../../scss/variables.scss";
+@import "../../scss/mixin.scss";
+
+.header{
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 3rem 15rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  @include respond(tab-land){
+    padding: 3rem 10rem;
+  }
+  @include respond(phone){
+    padding: 3rem 5rem;
+
+  }
+
+  &__nav{
+    display: flex;
+    align-items: center;
+     @include respond(phone){
+        display: none;
+      }
+
+  }
+
+  &__logo{
+    &-img{
+      height: 3rem ;
+    }
+  }
+  &__list{
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+  &__list-item{
+    margin-right: 1.5rem;
+  }
+  &__list-link{
+    &:link, &:visited{
+      text-decoration: none;
+      text-transform: uppercase;
+      color: inherit;
+      padding: 1rem 1.5rem;
+      font-size: 1.2rem;
+      background-image: linear-gradient(to right, $soft-red, $soft-red);
+      background-size: 0% 2px;
+      background-position: 100% 100%;
+      background-repeat: no-repeat;
+      transition: background-size .5s;
+      -webkit-transition: background-size .5s;
+      -moz-transition: background-size .5s;
+      -ms-transition: background-size .5s;
+      &:hover{
+        background-position: 0 100%;
+        background-size: 100% 2px;
+
+      }
+    }
+  }
+
+  &__btn{
+    padding: 1rem 3.5rem;
+    margin-left: 1rem;
+    color: $white;
+    background-color: $soft-red;
+    border: 0;
+    border-radius: .4rem;
+    -webkit-border-radius: .4rem;
+    -moz-border-radius: .4rem;
+    -ms-border-radius: .4rem;
+    -o-border-radius: .4rem;
+    box-shadow: 0 0 8px #0000001a;
+    cursor: pointer;
+    transition:all .3s;
+
+    &:hover{
+     transform: scale(1.03) translateY(-.2rem);
+     -webkit-transform: scale(1.03) translateY(-.2rem);
+     -moz-transform: scale(1.03) translateY(-.2rem);
+     -ms-transform: scale(1.03) translateY(-.2rem);
+     -o-transform: scale(1.03) translateY(-.2rem);
+}
+}
+}
+
+.nav-btn{
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  @include respond(phone){
+    display: block;
+  }
+}
+
+.nav-icon{
+  font-size:1.8rem;
+}
+
+.shadow{
+    box-shadow: 0 0 8px #0000001a;
+
+}

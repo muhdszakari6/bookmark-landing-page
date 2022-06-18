@@ -1,1 +1,96 @@
 /* You can add global styles to this file, and also import other style files */
+@import './scss/variables.scss';
+@import './scss/mixin.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  /*1rem = 10px*/
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+    scroll-behavior: smooth;
+  }
+}
+
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+    scroll-behavior: smooth;
+  }
+}
+
+@media (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+
+ .btn {
+   padding: 1.2rem 2.5rem;
+   border: 0;
+   border-radius: .4rem;
+   -webkit-border-radius: .4rem;
+   -moz-border-radius: .4rem;
+   -ms-border-radius: .4rem;
+   -o-border-radius: .4rem;
+   box-shadow:0 0 8px #0000001a;
+   cursor: pointer;
+   transition: all .3s;
+    @include respond(tab-land){
+      font-size: 1.1rem;
+    }
+    @include respond(tab-port){
+      padding: 1.2rem 1.8rem;
+    }
+   &:hover {
+     transform: scale(1.03) translateY(-.2rem);
+     -webkit-transform: scale(1.03) translateY(-.2rem);
+     -moz-transform: scale(1.03) translateY(-.2rem);
+     -ms-transform: scale(1.03) translateY(-.2rem);
+     -o-transform: scale(1.03) translateY(-.2rem);
+   }
+
+   &-primary {
+     color: $white;
+     background-color: $soft-blue;
+   }
+
+   &-secondary{
+      color: $very-dark-blue;
+      background-color: hsl(229deg 8% 60% / 15%);
+   }
+
+
+
+
+  }
+
+
+  a{
+      text-decoration: none;
+      text-transform: uppercase;
+      color: inherit;
+  }

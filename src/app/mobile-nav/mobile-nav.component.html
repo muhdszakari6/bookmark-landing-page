@@ -1,0 +1,65 @@
+<nav class="mobile-nav" [ngClass]="{'nav-open': isOpen}">
+
+  <section class="mobile-nav__section">
+
+    <header class="mobile-nav__header">
+
+      <div class="bookmark__wrapper">
+        <div class="bookmark__icon-wrapper">
+          <fa-icon [icon]="bookmark" class="bookmark__icon">
+          </fa-icon>
+        </div>
+        <p class="bookmark__text">
+          Bookmark
+        </p>
+
+      </div>
+
+      <button class="nav-btn" (click)="closeNav()">
+
+        <fa-icon [icon]="close" class="bookmark__close-icon">
+
+        </fa-icon>
+      </button>
+
+
+    </header>
+
+    <nav class="mobile-nav__nav">
+      <ul class="mobile-nav__list">
+        <li class="mobile-nav__item">
+          <a href="#" class="mobile-nav__link">
+            Features
+          </a>
+        </li>
+        <li class="mobile-nav__item">
+          <a href="#" class="mobile-nav__link">
+            Pricing
+          </a>
+        </li>
+        <li class="mobile-nav__item">
+          <a href="#" class="mobile-nav__link">
+            Contact
+          </a>
+        </li>
+      </ul>
+
+      <button class="mobile-nav__btn">
+        Login
+      </button>
+    </nav>
+
+    <div class="icon-wrapper">
+      <fa-icon [icon]="facebook" class="me-3 social-icon">
+
+      </fa-icon>
+      <fa-icon [icon]="twitter" class="social-icon">
+
+      </fa-icon>
+    </div>
+
+  </section>
+
+
+
+</nav>

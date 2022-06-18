@@ -1,0 +1,44 @@
+<header class="header" [ngClass]="{'shadow': sticky}">
+  <div class="header__logo">
+    <a href="#">
+      <img src="assets/logo-bookmark.svg" alt="Bookmark Logo" class="header__logo-img">
+    </a>
+  </div>
+
+  <nav class="header__nav">
+    <ul class="header__list">
+      <li class="header__list-item">
+        <a href="" class="header__list-link">
+          Features
+        </a>
+      </li>
+      <li class="header__list-item">
+        <a href="" class="header__list-link">
+          Pricing
+        </a>
+      </li>
+      <li class="header__list-item">
+        <a href="" class="header__list-link">
+          Contact
+        </a>
+      </li>
+    </ul>
+
+    <button class="header__btn">Login</button>
+  </nav>
+
+  <button *ngIf="!open" (click)="toggleMobileNav()" class="nav-btn">
+
+    <fa-icon class="nav-icon" [icon]="navIcon">
+
+    </fa-icon>
+
+  </button>
+
+
+
+</header>
+
+<app-mobile-nav (closeEvent)="toggleMobileNav()" [isOpen]="open">
+
+</app-mobile-nav>

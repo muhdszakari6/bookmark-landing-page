@@ -1,0 +1,123 @@
+
+@import "../../scss/variables.scss";
+@import "../../scss/mixin.scss";
+.newsletter{
+  padding: 3rem $px-desktop;
+  margin-top: 9rem;
+  padding-top: 7rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: $soft-blue;
+
+  @include respond(tab-land){
+    padding: 2rem $px-tab;
+  padding-top: 7rem;
+
+  }
+
+  @include respond(phone){
+    flex-direction: column;
+    padding: 2rem $px-phone;
+    align-items: center;
+    padding-top: 7rem;
+
+  }
+
+  &__heading{
+  text-align: center;
+
+  }
+
+    &__title{
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 2.5rem;
+    color: $white;
+    font-weight: 500;
+    text-transform: capitalize;
+
+
+    @include respond(tab-land){
+      font-size: 3.5rem;
+    }
+    @include respond(tab-port){
+      font-size: 2.5rem;
+    }
+    @include respond(phone){
+      text-align: center;
+    }
+  }
+
+  &__desc{
+    font-size: 1.8rem;
+    color: $white;
+    margin-bottom: 3rem;
+    line-height: 1.5;
+    max-width: 50rem;
+    @include respond(tab-land){
+      font-size: 1.6rem;
+      line-height: 1.2
+    }
+    @include respond(phone){
+      text-align: center;
+    }
+
+  }
+    &__btn{
+    padding: 1.5rem 3.5rem;
+    margin-left: 1rem;
+    color: $white;
+    background-color: $soft-red;
+    border: 0;
+    border-radius: .4rem;
+    -webkit-border-radius: .4rem;
+    -moz-border-radius: .4rem;
+    -ms-border-radius: .4rem;
+    -o-border-radius: .4rem;
+    box-shadow: 0 0 8px #0000001a;
+    cursor: pointer;
+    transition:all .3s;
+
+    &:hover{
+     transform: scale(1.03) translateY(-.2rem);
+     -webkit-transform: scale(1.03) translateY(-.2rem);
+     -moz-transform: scale(1.03) translateY(-.2rem);
+     -ms-transform: scale(1.03) translateY(-.2rem);
+     -o-transform: scale(1.03) translateY(-.2rem);
+    }
+     @include respond(phone){
+      margin-left: 0;
+      margin-top: 2rem;
+    }
+  }
+  &__form{
+    display: flex;
+    align-items: center;
+    margin-top: 2.5rem;
+    @include respond(phone){
+      flex-direction: column;
+    }
+  }
+
+  &__input{
+    background: $white;
+    padding: 1.5rem 2.5rem;
+    border-radius: .8rem;
+    -webkit-border-radius: .8rem;
+    -moz-border-radius: .8rem;
+    -ms-border-radius: .8rem;
+    -o-border-radius: .8rem;
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+    border: none;
+    outline: none;
+    caret-color: $soft-blue;
+    color: #777;
+    width: 32rem;
+    &:hover{
+      box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+    }
+
+}
+
+}

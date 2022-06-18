@@ -1,0 +1,146 @@
+
+@import "../../scss/variables.scss";
+@import "../../scss/mixin.scss";
+.faqs{
+  padding: 3rem $px-desktop;
+  padding-top: 7rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @include respond(tab-land){
+    padding: 2rem $px-tab;
+  padding-top: 7rem;
+
+  }
+
+  @include respond(phone){
+    flex-direction: column;
+    padding: 2rem $px-phone;
+    align-items: center;
+    padding-top: 7rem;
+
+  }
+
+  &__heading{
+  text-align: center;
+  }
+
+    &__title{
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 2.5rem;
+    color: $very-dark-blue;
+    font-weight: 500;
+    text-transform: capitalize;
+
+
+    @include respond(tab-land){
+      font-size: 3.5rem;
+    }
+    @include respond(tab-port){
+      font-size: 2.5rem;
+    }
+    @include respond(phone){
+      text-align: center;
+    }
+  }
+
+  &__desc{
+    font-size: 1.8rem;
+    color: $greyish-blue;
+    margin-bottom: 3rem;
+    line-height: 1.5;
+    max-width: 50rem;
+    @include respond(tab-land){
+      font-size: 1.6rem;
+      line-height: 1.2
+    }
+    @include respond(phone){
+      text-align: center;
+    }
+
+  }
+
+  &__questions{
+    border-bottom: 1px solid #ccc;
+
+  }
+
+  &__toggle{
+    padding: 2rem 0rem;
+    background: none;
+    border: none;
+    display: flex;
+    text-align: start;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border-top: 1px solid #ccc;
+    width: 50rem;
+    font-size: 1.5rem;
+    padding-right: 2rem;
+    @include respond(phone){
+      width: 30rem;
+    }
+    &:hover{
+      color: $soft-red;
+    }
+  }
+  &__icon{
+    color: $soft-blue;
+    font-weight: 500;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+}
+
+&__accordion-wrapper{
+    transition: all .4s;
+    transform-origin: top;
+    overflow: hidden;
+    background: $white;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+    max-height: 6rem;
+}
+
+  &__ans{
+      font-size: 1.5rem;
+      color: $greyish-blue;
+      margin-bottom: 3rem;
+      line-height: 1.5;
+      max-width: 50rem;
+      @include respond(tab-land){
+      font-size: 1.1rem;
+      line-height: 1.2
+    }
+    @include respond(phone){
+      text-align: center;
+    }
+  }
+}
+
+
+.mt-4{
+  margin-top: 4rem;
+}
+
+
+.show{
+    max-height: 50rem;
+    height: max-content;
+}
+
+
+.open{
+  transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+}
