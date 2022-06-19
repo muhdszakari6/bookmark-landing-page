@@ -186,7 +186,7 @@
   &__tabs-wrapper{
     position: relative;
     display: flex;
-    overflow: hidden;
+    overflow: scroll;
       flex-wrap: nowrap;
   }
   &__illustrations{
