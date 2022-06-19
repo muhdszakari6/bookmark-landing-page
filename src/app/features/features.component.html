@@ -1,4 +1,4 @@
-<section class="feature">
+<section #feature__container class="feature">
   <div class="feature__heading">
 
     <h1 class="feature__title">
@@ -14,63 +14,125 @@
 
   <div class="feature__tabs">
     <div class="feature__line"></div>
-    <button class="feature__btn" [ngClass]="{'active': openedTab === i}" (click)="openTab(i)"
-      *ngFor="let option of tabs; let i = index">
-      {{option}}
-    </button>
+
+    <div class="feature__tabs-wrapper">
+      <div #indicator class="feature__indicator"></div>
+      <!-- <div #indicatorMobile class="feature__indicator-mobile"></div> -->
+
+      <button class="feature__btn" [ngClass]="{'active': openedTab === i}" #button (click)="openTab(i, button)"
+        *ngFor="let option of tabs; let i = index">
+        {{option}}
+
+      </button>
+    </div>
+
 
   </div>
 
-  <div class="feature__tab-content">
-
-    <div class="feature__x">
-      <img src="assets/illustration-features-tab-1.svg" *ngIf="openedTab===0" alt="" class="feature__illustrations">
-      <img src="assets/illustration-features-tab-2.svg" *ngIf="openedTab===1" alt="" class="feature__illustrations">
-      <img src="assets/illustration-features-tab-3.svg" *ngIf="openedTab===2" alt="" class="feature__illustrations">
-    </div>
+  <div class="feature__tab-container">
 
 
-    <div class="feature__y">
+    <div class="feature__tab-content">
 
-      <h1 class="feature__title" *ngIf="openedTab===0">
-        Bookmark in one click
-      </h1>
-      <h1 class="feature__title" *ngIf="openedTab===1">
-        Intelligent Search
-      </h1>
-
-      <h1 class="feature__title" *ngIf="openedTab===2">
-        Share your bookmarks
-      </h1>
-
-
-
-
-      <p class="feature__desc" *ngIf="openedTab === 0">
-        Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete
-        control over how you manage your favourite sites.
-      </p>
-
-      <p class="feature__desc" *ngIf="openedTab === 1">
-        Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of
-        your
-        bookmarks.
-      </p>
-
-      <p class="feature__desc" *ngIf="openedTab === 2">
-        Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click
-        of a
-        button.
-      </p>
-
-      <div class="feature__cta">
-        <button class="btn btn-primary">
-          More Info
-        </button>
+      <div class="feature__x">
+        <img src="assets/illustration-features-tab-1.svg" alt="" class="feature__illustrations">
       </div>
+
+
+      <div class="feature__y">
+
+        <h1 class="feature__title">
+          Bookmark in one click
+        </h1>
+
+
+
+        <p class="feature__desc">
+          Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete
+          control over how you manage your favourite sites.
+        </p>
+
+
+
+        <div class="feature__cta">
+          <button class="btn btn-primary">
+            More Info
+          </button>
+        </div>
+      </div>
+
+
     </div>
+    <div class="feature__tab-content">
+
+      <div class="feature__x">
+        <img src="assets/illustration-features-tab-2.svg" alt="" class="feature__illustrations">
+      </div>
 
 
+      <div class="feature__y">
+
+
+        <h1 class="feature__title">
+          Intelligent Search
+        </h1>
+
+
+
+
+
+
+
+        <p class="feature__desc">
+          Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of
+          your
+          bookmarks.
+        </p>
+
+
+
+        <div class="feature__cta">
+          <button class="btn btn-primary">
+            More Info
+          </button>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="feature__tab-content">
+
+      <div class="feature__x">
+        <img src="assets/illustration-features-tab-3.svg" alt="" class="feature__illustrations">
+      </div>
+
+
+      <div class="feature__y">
+
+        <h1 class="feature__title">
+          Share Your Bookmarks
+        </h1>
+
+
+
+
+
+
+        <p class="feature__desc">
+          Easily share your bookmarks and collections with others. Create a shareable link that you can send at the
+          click of a
+          button.
+        </p>
+
+        <div class="feature__cta">
+          <button class="btn btn-primary">
+            More Info
+          </button>
+        </div>
+      </div>
+
+
+    </div>
   </div>
 
 </section>

@@ -47,6 +47,8 @@
       }
       @include respond(phone){
           width: 100%;
+          margin-right: 0;
+
       }
   }
 
@@ -94,6 +96,7 @@
   }
   &__tabs{
     display: flex;
+    position: relative;
     justify-content: center;
      @include respond(phone){
       flex-direction: column;
@@ -107,6 +110,34 @@
     border-top: 1px solid #EEE;
 
   }
+  &__indicator{
+    width: 200px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: $soft-red;
+    height: 3px;
+    @include respond(phone){
+      width: 100%;
+      display: none;
+    }
+
+  }
+   &__indicator-mobile{
+      display: none;
+
+
+    @include respond(phone){
+      width: 100%;
+      position: absolute;
+    top: 0;
+    left: 0;
+    background: $soft-red;
+    height: 3px;
+    display: block;
+    }
+
+  }
   &__btn{
     position: relative;
     background: none;
@@ -116,7 +147,10 @@
     font-size: 1.4rem;
     color: $greyish-blue;
     border-bottom: 1px solid #EEE;
-
+    width: 200px;
+  @include respond(phone){
+      width: 100%;
+    }
 
   }
 
@@ -126,6 +160,10 @@
     padding: 3rem $px-desktop;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    min-width: 100%;
+        margin-bottom: 4rem;
+
     @include respond(tab-land){
         padding: 2rem $px-tab;
     }
@@ -137,6 +175,19 @@
 
   }
 
+
+
+  }
+  &__tab-container{
+    display: flex;
+    overflow: hidden;
+      flex-wrap: nowrap;
+  }
+  &__tabs-wrapper{
+    position: relative;
+    display: flex;
+    overflow: hidden;
+      flex-wrap: nowrap;
   }
   &__illustrations{
     @include respond(phone){
@@ -155,5 +206,5 @@
 
 
 .active{
-  border-bottom: 2px solid $soft-red;
+  // border-bottom: 2px solid $soft-red;
 }
