@@ -41,6 +41,7 @@ export class ExtensionComponent implements OnInit {
       rotate: 20,
       opacity: 0,
       duration: 1,
+      delay: .5,
       scrollTrigger: { start: 'top center', trigger: this.card2.nativeElement, toggleActions: 'play pause none pause' }
 
     })
@@ -53,6 +54,7 @@ export class ExtensionComponent implements OnInit {
       rotate: 20,
       opacity: 0,
       duration: 1,
+      delay: 1,
       scrollTrigger: { start: 'top center', trigger: this.card1.nativeElement, toggleActions: 'play pause none pause' }
 
     })

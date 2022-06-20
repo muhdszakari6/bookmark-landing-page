@@ -2,6 +2,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger, ScrollToPlugin } from 'gsap/all';
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
+import { Observable, map, fromEvent, startWith, shareReplay } from 'rxjs';
+
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, CSSRulePlugin);
 
@@ -21,63 +23,71 @@ export class FeaturesComponent implements OnInit {
   openedTab: number = 0;
   tabs: string[] = ['Simple Bookmarking', 'Speedy Searching', 'Easy Sharing']
   tween: any
+  isHandset: boolean = false;
 
-  constructor() { }
+  media(query: string): Observable<boolean> {
+    const mediaQuery = window.matchMedia(query);
+    return fromEvent(mediaQuery, 'change').pipe(
+      startWith(mediaQuery as any),
+      map((list: MediaQueryList) => list.matches)
+    );
+  }
+
+  // Usage
+
+  constructor(
+
+  ) { }
 
   ngOnInit(): void {
     const panels = gsap.utils.toArray(".feature__tab-content");
-    this.tween = gsap.to(panels, {
-      xPercent: -100 * (panels.length - 1),
-      ease: "none",
-      scrollTrigger: {
-        trigger: this.container.nativeElement,
-        pin: true,
-        pinSpacing: true,
-        start: 'center center',
-        scrub: .3,
-        snap: 1 / (panels.length - 1),
-        // base vertical scrolling on how wide the container is so it feels more natural.
-        end: "+=3500",
-      }
+    this.media('(max-width: 767px)').subscribe((matches) =>
+      this.isHandset = (matches) // true or false
+    );
+
+
+    ScrollTrigger.matchMedia({
+
+      // desktop
+      "(min-width: 768px)": () => {
+        this.tween = gsap.to(panels, {
+          xPercent: -100 * (panels.length - 1),
+          ease: "none",
+          scrollTrigger: {
+            trigger: this.container.nativeElement,
+            pin: true,
+            pinSpacing: false,
+            start: 'center center',
+            scrub: .3,
+            snap: 1 / (panels.length - 1),
+            // base vertical scrolling on how wide the container is so it feels more natural.
+            end: "+=3500",
+          }
+        });
+
+        gsap.to(this.indicator.nativeElement, {
+          xPercent: 100 * (panels.length - 1),
+          ease: "none",
+          scrollTrigger: {
+            trigger: this.container.nativeElement,
+            pin: true,
+            pinSpacing: true,
+            start: 'center center',
+            scrub: .3,
+            snap: 1 / (panels.length - 1),
+            // base vertical scrolling on how wide the container is so it feels more natural.
+            end: "+=3500",
+          }
+        });
+
+
+      },
     });
-
-    gsap.to(this.indicator.nativeElement, {
-      xPercent: 100 * (panels.length - 1),
-      ease: "none",
-      scrollTrigger: {
-        trigger: this.container.nativeElement,
-        pin: true,
-        pinSpacing: true,
-        start: 'center center',
-        scrub: .3,
-        snap: 1 / (panels.length - 1),
-        // base vertical scrolling on how wide the container is so it feels more natural.
-        end: "+=3500",
-      }
-    });
-    // console.log(this.indicatorMobile)
-    // gsap.to(this.indicatorMobile.nativeElement, {
-    //   yPercent: 100 * (panels.length - 1),
-    //   ease: "none",
-    //   scrollTrigger: {
-    //     trigger: this.container.nativeElement,
-    //     pin: true,
-    //     pinSpacing: true,
-    //     start: 'center center',
-    //     scrub: .3,
-    //     snap: 1 / (panels.length - 1),
-    //     // base vertical scrolling on how wide the container is so it feels more natural.
-    //     end: "+=3500",
-    //   }
-    // });
-
-
   }
 
   openTab(i: number, targetElem: any) {
     this.openedTab = i
 
-    console.log(targetElem.offsetWidth)
 
     let totalScroll = this.tween.scrollTrigger.end - this.tween.scrollTrigger.start,
       totalMovement = ([1, 2, 3].length - 1) * targetElem.offsetWidth;

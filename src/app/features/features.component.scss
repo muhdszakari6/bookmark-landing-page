@@ -178,16 +178,26 @@
 
 
   }
-  &__tab-container{
+  &__tab-container-desktop{
     display: flex;
     overflow: hidden;
       flex-wrap: nowrap;
+      @include respond(phone){
+        display: none;
+    }
+  }
+    &__tab-container-mobile{
+    display: none;
+
+      @include respond(phone){
+        display: block;
+    }
   }
   &__tabs-wrapper{
     position: relative;
-    display: flex;
-    overflow: scroll;
-      flex-wrap: nowrap;
+    // display: flex;
+    // overflow: scroll;
+      // flex-wrap: nowrap;
   }
   &__illustrations{
     @include respond(phone){
@@ -206,5 +216,7 @@
 
 
 .active{
-  // border-bottom: 2px solid $soft-red;
+   @include respond(phone){
+  border-bottom: 2px solid $soft-red;
+    }
 }
