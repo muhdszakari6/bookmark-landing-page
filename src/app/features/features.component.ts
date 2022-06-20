@@ -41,7 +41,7 @@ export class FeaturesComponent implements OnInit {
 
   ngOnInit(): void {
     const panels = gsap.utils.toArray(".feature__tab-content");
-    this.media('(max-width: 767px)').subscribe((matches) =>
+    this.media('(max-width: 769px)').subscribe((matches) =>
       this.isHandset = (matches) // true or false
     );
 
@@ -49,7 +49,7 @@ export class FeaturesComponent implements OnInit {
     ScrollTrigger.matchMedia({
 
       // desktop
-      "(min-width: 768px)": () => {
+      "(min-width: 769px)": () => {
         this.tween = gsap.to(panels, {
           xPercent: -100 * (panels.length - 1),
           ease: "none",
