@@ -88,17 +88,19 @@ export class FeaturesComponent implements OnInit {
   openTab(i: number, targetElem: any) {
     this.openedTab = i
 
+    if (!this.isHandset) {
+      let totalScroll = this.tween.scrollTrigger.end - this.tween.scrollTrigger.start,
+        totalMovement = ([1, 2, 3].length - 1) * targetElem.offsetWidth;
+      let y = Math.round(this.tween.scrollTrigger.start + (targetElem.offsetLeft / totalMovement) * totalScroll);
+      console.log(y)
+      gsap.to(window, {
+        scrollTo: {
+          y: y,
+          autoKill: false
+        },
+        duration: 1
+      });
+    }
 
-    let totalScroll = this.tween.scrollTrigger.end - this.tween.scrollTrigger.start,
-      totalMovement = ([1, 2, 3].length - 1) * targetElem.offsetWidth;
-    let y = Math.round(this.tween.scrollTrigger.start + (targetElem.offsetLeft / totalMovement) * totalScroll);
-    console.log(y)
-    gsap.to(window, {
-      scrollTo: {
-        y: y,
-        autoKill: false
-      },
-      duration: 1
-    });
   }
 }
