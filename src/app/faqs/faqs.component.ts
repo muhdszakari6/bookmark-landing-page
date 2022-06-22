@@ -75,14 +75,15 @@ export class FaqsComponent implements OnInit, AfterViewInit {
 
           },
 
+          //mobile
           "(max-width: 769px)": () => {
 
 
             gsap.from(question.nativeElement, {
 
-              xPercent: i % 2 === 0 ? 4 : -4,
-              skewX: i % 2 === 0 ? 4 : -4,
-              yPercent: 4,
+              // skewY: i % 2 === 0 ? 4 : -4,
+              scaleY: 0,
+              yPercent: 100,
               opacity: 0,
               duration: .5,
               delay: i * 0.1,
