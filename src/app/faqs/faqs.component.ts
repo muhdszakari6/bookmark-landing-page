@@ -83,6 +83,7 @@ export class FaqsComponent implements OnInit, AfterViewInit {
 
               // skewY: i % 2 === 0 ? 4 : -4,
               scaleY: 0,
+              transformOrigin: 'bottom',
               yPercent: 100,
               opacity: 0,
               duration: .5,
