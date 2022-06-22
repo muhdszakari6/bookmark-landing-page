@@ -28,31 +28,33 @@ export class HeroComponent implements OnInit {
 
 
     this.tl.from('.hero__title', {
-      ease: 'none',
+      ease: 'Bounce.easeOut',
       yPercent: -30,
-      opacity: .3,
+      opacity: 0,
       duration: 1,
-      // delay: 1
+      delay: .1
     })
-
     this.tl.from('.hero__desc', {
-      ease: 'none',
+      ease: 'Bounce.easeOut',
       yPercent: -30,
-      opacity: .1,
+      opacity: 0,
       duration: 1,
+      delay: .2
+
     }, .2)
 
     this.tl.from(this.cta_buttons.nativeElement, {
-      ease: 'none',
+      ease: 'Bounce.easeOut',
       yPercent: -50,
-      opacity: .1,
+      opacity: 0,
       duration: 1,
-      delay: .1
+      delay: .3,
+
 
     }, .2)
 
     this.tl.from(this.image.nativeElement, {
-      ease: 'none',
+      ease: 'Bounce.easeOut',
       xPercent: -20,
       opacity: 0,
       duration: 1,

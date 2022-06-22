@@ -30,8 +30,11 @@ export class ExtensionComponent implements OnInit {
       xPercent: -70,
       rotate: 20,
       opacity: 0,
-      duration: 1,
-      scrollTrigger: { start: 'top center', trigger: this.card3.nativeElement, toggleActions: 'play pause none pause' }
+      // duration: 1,
+
+      scrollTrigger: {
+        start: 'top bottom', end: "+=100%", scrub: true, trigger: '.extension', toggleActions: 'play none none reverse'
+      }
 
     })
 
@@ -42,8 +45,10 @@ export class ExtensionComponent implements OnInit {
       opacity: 0,
       duration: 1,
       delay: .5,
-      scrollTrigger: { start: 'top center', trigger: this.card2.nativeElement, toggleActions: 'play pause none pause' }
 
+      scrollTrigger: {
+        start: 'top bottom', end: "+=100%", scrub: true, trigger: '.extension', toggleActions: 'play none none reverse'
+      }
     })
 
 
@@ -55,8 +60,10 @@ export class ExtensionComponent implements OnInit {
       opacity: 0,
       duration: 1,
       delay: 1,
-      scrollTrigger: { start: 'top center', trigger: this.card1.nativeElement, toggleActions: 'play pause none pause' }
 
+      scrollTrigger: {
+        start: 'top bottom', end: "+=100%", scrub: true, trigger: '.extension', toggleActions: 'play none none reverse'
+      }
     })
 
 

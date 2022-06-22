@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 import { gsap } from 'gsap';
@@ -12,11 +12,13 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, CSSRulePlugin);
   templateUrl: './faqs.component.html',
   styleUrls: ['./faqs.component.scss']
 })
-export class FaqsComponent implements OnInit {
+export class FaqsComponent implements OnInit, AfterViewInit {
+
+  @ViewChildren("question") questionsEl!: QueryList<ElementRef>;
 
 
-  @ViewChild("question", { static: true }) question!: ElementRef
   @ViewChild("button", { static: true }) button!: ElementRef
+
 
   accordion = faChevronDown
   questions = [
@@ -37,13 +39,6 @@ export class FaqsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    gsap.from(this.question.nativeElement, {
-      yPercent: -50,
-      opacity: 0,
-      duration: .5,
-      scrollTrigger: { start: 'top center', trigger: this.question.nativeElement, toggleActions: 'play pause none pause' }
-
-    })
 
     gsap.from(this.button.nativeElement, {
       yPercent: 10,
@@ -52,6 +47,27 @@ export class FaqsComponent implements OnInit {
       scrollTrigger: { start: 'top bottom', trigger: this.button.nativeElement, toggleActions: 'play pause none pause' }
 
     })
+
+
+
+  }
+
+  ngAfterViewInit(): void {
+    this.questionsEl.forEach(
+      (question, i) => {
+        gsap.from(question.nativeElement, {
+
+          xPercent: i % 2 === 0 ? 40 : -40,
+          skewX: i % 2 === 0 ? 40 : -40,
+          yPercent: 40,
+          opacity: 0,
+          duration: .5,
+          delay: i * 0.1,
+          scrollTrigger: { start: 'bottom bottom', trigger: question.nativeElement, scrub: false, toggleActions: 'play pause none reverse' }
+
+        })
+      }
+    )
 
 
 

@@ -10,12 +10,12 @@
     </p>
   </div>
 
-  <div #question class="faqs__questions">
+  <div class="faqs__questions">
 
     <ng-container *ngFor="let question of questions; let i = index">
 
 
-      <div class="faqs__accordion-wrapper" [ngClass]="{'show': anchor==i}">
+      <div #question class="faqs__accordion-wrapper" [ngClass]="{'show': anchor==i}">
 
         <button (click)="toggle(i)" class="faqs__toggle">
           <p class="faqs__btn-txt">
