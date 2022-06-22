@@ -25,66 +25,108 @@ export class ExtensionComponent implements OnInit {
 
   ngOnInit(): void {
 
-    gsap.from(this.card3.nativeElement, {
-      yPercent: -10,
-      xPercent: -70,
-      rotate: 20,
-      opacity: 0,
-      // duration: 1,
+    ScrollTrigger.matchMedia({
 
-      scrollTrigger: {
-        start: 'top bottom', end: "+=100%", scrub: true, trigger: '.extension', toggleActions: 'play none none reverse'
-      }
-
-    })
-
-    gsap.from(this.card2.nativeElement, {
-      yPercent: -10,
-      xPercent: -70,
-      rotate: 20,
-      opacity: 0,
-      duration: 1,
-      delay: .5,
-
-      scrollTrigger: {
-        start: 'top bottom', end: "+=100%", scrub: true, trigger: '.extension', toggleActions: 'play none none reverse'
-      }
-    })
+      // desktop
+      "(min-width: 769px)": () => {
 
 
 
-    gsap.from(this.card1.nativeElement, {
-      yPercent: -10,
-      xPercent: -70,
-      rotate: 20,
-      opacity: 0,
-      duration: 1,
-      delay: 1,
 
-      scrollTrigger: {
-        start: 'top bottom', end: "+=100%", scrub: true, trigger: '.extension', toggleActions: 'play none none reverse'
-      }
-    })
+        gsap.from(this.card3.nativeElement, {
+          yPercent: -10,
+          xPercent: -70,
+          rotate: 20,
+          opacity: 0,
+          // duration: 1,
+
+          scrollTrigger: {
+            start: 'top bottom', end: "+=100%", scrub: true, trigger: '.extension', toggleActions: 'play none none reverse'
+          }
+
+        })
+
+        gsap.from(this.card2.nativeElement, {
+          yPercent: -10,
+          xPercent: -70,
+          rotate: 20,
+          opacity: 0,
+          duration: 1,
+          delay: .5,
+
+          scrollTrigger: {
+            start: 'top bottom', end: "+=100%", scrub: true, trigger: '.extension', toggleActions: 'play none none reverse'
+          }
+        })
 
 
 
-    // this.tl.from(this.card2.nativeElement, {
-    //   ease: 'none',
-    //   xPercent: -20,
-    //   opacity: .1,
-    //   duration: 1,
-    //   scrollTrigger: { start: 'top', scrub: .3, }
+        gsap.from(this.card1.nativeElement, {
+          yPercent: -10,
+          xPercent: -70,
+          rotate: 20,
+          opacity: 0,
+          duration: 1,
+          delay: 1,
 
-    // }, .4)
+          scrollTrigger: {
+            start: 'top bottom', end: "+=100%", scrub: true, trigger: '.extension', toggleActions: 'play none none reverse'
+          }
+        })
 
-    // this.tl.from(this.card3.nativeElement, {
-    //   ease: 'none',
-    //   xPercent: -20,
-    //   opacity: .1,
-    //   duration: 1,
-    //   scrollTrigger: { start: 'top', scrub: .3, }
 
-    // }, .3)
+      },
+
+      "(max-width: 769px)": () => {
+
+
+
+        gsap.from(this.card3.nativeElement, {
+          yPercent: -10,
+          xPercent: -70,
+          rotate: 20,
+          opacity: 0,
+          // duration: 1,
+
+          scrollTrigger: {
+            start: 'top bottom', end: "+=100%", scrub: false, trigger: '.extension', toggleActions: 'play none none reverse'
+          }
+
+        })
+
+        gsap.from(this.card2.nativeElement, {
+          yPercent: -10,
+          xPercent: -70,
+          rotate: 20,
+          opacity: 0,
+          duration: 1,
+          delay: .5,
+
+          scrollTrigger: {
+            start: 'top bottom', end: "+=100%", scrub: false, trigger: '.extension', toggleActions: 'play none none reverse'
+          }
+        })
+
+
+
+        gsap.from(this.card1.nativeElement, {
+          yPercent: -10,
+          xPercent: -70,
+          rotate: 20,
+          opacity: 0,
+          duration: 1,
+          delay: 1,
+
+          scrollTrigger: {
+            start: 'top bottom', end: "+=100%", scrub: false, trigger: '.extension', toggleActions: 'play none none reverse'
+          }
+        })
+
+
+      },
+    });
+
+
 
 
   }
