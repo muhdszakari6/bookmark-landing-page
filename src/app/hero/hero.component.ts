@@ -25,11 +25,14 @@ export class HeroComponent implements OnInit {
 
     let after: any = CSSRulePlugin.getRule(":after");
 
+
+
     this.tl.from('.hero__title', {
       ease: 'none',
       yPercent: -30,
-      opacity: .1,
-      duration: 1
+      opacity: .3,
+      duration: 1,
+      // delay: 1
     })
 
     this.tl.from('.hero__desc', {
@@ -51,8 +54,9 @@ export class HeroComponent implements OnInit {
     this.tl.from(this.image.nativeElement, {
       ease: 'none',
       xPercent: -20,
-      opacity: .1,
+      opacity: 0,
       duration: 1,
+      delay: .5
     }, .2)
 
     this.tl.to(after[1], {
