@@ -55,17 +55,44 @@ export class FaqsComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.questionsEl.forEach(
       (question, i) => {
-        gsap.from(question.nativeElement, {
+        ScrollTrigger.matchMedia({
 
-          xPercent: i % 2 === 0 ? 40 : -40,
-          skewX: i % 2 === 0 ? 40 : -40,
-          yPercent: 40,
-          opacity: 0,
-          duration: .5,
-          delay: i * 0.1,
-          scrollTrigger: { start: 'bottom bottom', trigger: question.nativeElement, scrub: false, toggleActions: 'play pause none reverse' }
+          // desktop
+          "(min-width: 769px)": () => {
 
-        })
+
+            gsap.from(question.nativeElement, {
+
+              xPercent: i % 2 === 0 ? 40 : -40,
+              skewX: i % 2 === 0 ? 40 : -40,
+              yPercent: 40,
+              opacity: 0,
+              duration: .5,
+              delay: i * 0.1,
+              scrollTrigger: { start: 'bottom bottom', trigger: question.nativeElement, scrub: false, toggleActions: 'play pause none reverse' }
+
+            })
+
+          },
+
+          "(max-width: 769px)": () => {
+
+
+            gsap.from(question.nativeElement, {
+
+              xPercent: i % 2 === 0 ? 4 : -4,
+              skewX: i % 2 === 0 ? 4 : -4,
+              yPercent: 4,
+              opacity: 0,
+              duration: .5,
+              delay: i * 0.1,
+              scrollTrigger: { start: 'bottom bottom', trigger: question.nativeElement, scrub: false, toggleActions: 'play pause none reverse' }
+
+            })
+
+          },
+        });
+
       }
     )
 
